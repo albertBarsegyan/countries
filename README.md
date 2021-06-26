@@ -12,7 +12,7 @@
 
 ![alt text](./src/flag.png)
 
-![alt text](./src/logo2.png)
+![alt text](./src/logo3.png)
 
 ### About this project
 
