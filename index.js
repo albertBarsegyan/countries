@@ -3,7 +3,10 @@ const mainLoaderContainer = document.querySelector('#mainLoaderContainer');
 const mainContainer = document.querySelector('#mainContainer');
 const loadButton = document.querySelector('#loadButton');
 
+// err message
+const errMessage = document.querySelector('#errorMessage');
 // search input and button
+const loadMoreContainer = document.querySelector('#loadMoreContainer');
 const searchInput = document.querySelector('#searchInput');
 const searchButton = document.querySelector('#searchButton');
 let loadedProductCount = 0;
@@ -122,6 +125,8 @@ function loadMore(e) {
 
 const searchFunction = (e) => {
   let sendValue = '';
+  loadMoreContainer.innerText = '';
+  let existCountry = false;
   if (e.key === 'Enter') {
     e.preventDefault();
     sendValue = e.target.value.trim().toLowerCase();
@@ -130,25 +135,49 @@ const searchFunction = (e) => {
       let productName = product.name.toLowerCase();
       //   console.log(productName);
       if (productName.startsWith(sendValue)) {
+        existCountry = true;
         makeProductContainer(mainProductContainer, product);
-      } else {
-        console.log('there isn\t country');
       }
     });
+    if (existCountry) {
+      errMessage.style.opacity = 0;
+      setTimeout(() => {
+        errMessage.style.display = 'none';
+      }, 550);
+    }
+    if (!existCountry) {
+      errMessage.style.display = 'flex';
+      setTimeout(() => {
+        errMessage.style.opacity = 1;
+      }, 0);
+    }
   }
 };
 
 searchInput.addEventListener('keypress', searchFunction);
 searchButton.addEventListener('click', () => {
   let sendValue = searchInput.value.trim().toLowerCase();
+  loadMoreContainer.innerText = '';
+  let existCountry = false;
   mainProductContainer.textContent = '';
   dataList.forEach((product, index, arr) => {
     let productName = product.name.toLowerCase();
     //   console.log(productName);
     if (productName.startsWith(sendValue)) {
+      existCountry = true;
       makeProductContainer(mainProductContainer, product);
-    } else {
-      console.log('there isn\t country');
     }
   });
+  if (existCountry) {
+    errMessage.style.opacity = 0;
+    setTimeout(() => {
+      errMessage.style.display = 'none';
+    }, 550);
+  }
+  if (!existCountry) {
+    errMessage.style.display = 'flex';
+    setTimeout(() => {
+      errMessage.style.opacity = 1;
+    }, 0);
+  }
 });

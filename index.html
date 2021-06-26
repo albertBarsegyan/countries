@@ -17,11 +17,16 @@
 </head>
 
 <body>
+    <div class="error-message" id="errorMessage">
+        <p>There is no such country</p>
+    </div>
     <!-- search container -->
     <div class="search-container">
+        <!-- logo -->
         <div class="logo-container">
             <a href="./index.html"><i class="fa fa-flag"></i></a>
         </div>
+        <!-- search input -->
         <div class="search__input-container">
             <input type="text" placeholder="Search Country" id="searchInput" class="search__input">
             <button type="button" id="searchButton" class="search__button"><i class="fas fa-search"></i></button>
@@ -33,11 +38,13 @@
             <div id="loader"></div>
         </div>
     </div>
+
     <!-- main container -->
     <div class="container" id="mainContainer">
         <!-- product list container -->
         <div class="product-container" id="productMainContainer"></div>
-        <div class="load-container">
+        <!-- load more button container -->
+        <div class="load-container" id="loadMoreContainer">
             <div><button type="button" id="loadButton">Load More</button></div>
         </div>
     </div>
