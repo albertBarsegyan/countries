@@ -119,11 +119,12 @@ function loadMore(e) {
   });
   loadedProductCount += 21;
 }
-searchInput.addEventListener('keypress', (e) => {
+
+const searchFunction = (e) => {
   let sendValue = '';
   if (e.key === 'Enter') {
     e.preventDefault();
-    sendValue = e.target.value.trim();
+    sendValue = e.target.value.trim().toLowerCase();
     mainProductContainer.textContent = '';
     dataList.forEach((product, index, arr) => {
       let productName = product.name.toLowerCase();
@@ -135,4 +136,19 @@ searchInput.addEventListener('keypress', (e) => {
       }
     });
   }
+};
+
+searchInput.addEventListener('keypress', searchFunction);
+searchButton.addEventListener('click', () => {
+  let sendValue = searchInput.value.trim().toLowerCase();
+  mainProductContainer.textContent = '';
+  dataList.forEach((product, index, arr) => {
+    let productName = product.name.toLowerCase();
+    //   console.log(productName);
+    if (productName.startsWith(sendValue)) {
+      makeProductContainer(mainProductContainer, product);
+    } else {
+      console.log('there isn\t country');
+    }
+  });
 });
