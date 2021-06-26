@@ -3,6 +3,9 @@ const mainLoaderContainer = document.querySelector('#mainLoaderContainer');
 const mainContainer = document.querySelector('#mainContainer');
 const loadButton = document.querySelector('#loadButton');
 
+// scroll top container
+const scrollTopContainer = document.querySelector('#scrollTopContainer');
+const scrollTopButton = document.querySelector('#scrollTopButton');
 // err message
 const errMessage = document.querySelector('#errorMessage');
 // search input and button
@@ -181,3 +184,26 @@ searchButton.addEventListener('click', () => {
     }, 0);
   }
 });
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 300 ||
+    document.documentElement.scrollTop > 300
+  ) {
+    scrollTopContainer.style.display = 'block';
+    setTimeout(() => {
+      scrollTopContainer.style.opacity = 1;
+    }, 200);
+  } else {
+    scrollTopContainer.style.opacity = 0;
+    setTimeout(() => {
+      scrollTopContainer.style.display = 'none';
+    }, 350);
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+window.addEventListener('scroll', scrollFunction);
+scrollTopButton.addEventListener('click', topFunction);
