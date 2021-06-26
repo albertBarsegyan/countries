@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://albertbarsegyan.github.io/countries/">
-    <img src="./src/logo.png/" alt="Logo" width="120" height="80">
+    <img src="./src/logo3.png/" alt="Logo" width="120" height="80">
   </a>
   <p align='center'>
   Flags project
@@ -12,7 +12,7 @@
 
 ![alt text](./src/flag.png)
 
-![alt text](./src/logo3.png)
+![alt text](./src/logo2.png)
 
 ### About this project
 
