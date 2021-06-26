@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" defer></script>
+    <title>Country List</title>
+</head>
+
+<body>
+    <!-- search container -->
+    <div class="search-container">
+        <div class="logo-container">
+            <a href="./index.html"><i class="fa fa-flag"></i></a>
+        </div>
+        <div class="search__input-container">
+            <input type="text" placeholder="Search Country" id="searchInput" class="search__input">
+            <button type="button" id="searchButton" class="search__button"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+    <!-- loader -->
+    <div class="loading-container" id="mainLoaderContainer">
+        <div id="loaderContainer">
+            <div id="loader"></div>
+        </div>
+    </div>
+    <!-- main container -->
+    <div class="container" id="mainContainer">
+        <!-- product list container -->
+        <div class="product-container" id="productMainContainer"></div>
+        <div class="load-container">
+            <div><button type="button" id="loadButton">Load More</button></div>
+        </div>
+    </div>
+</body>
+
+</html>
